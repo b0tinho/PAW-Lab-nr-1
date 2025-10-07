@@ -66,8 +66,9 @@
   }
 
 
-
+  document.getElementById("ex3_one").ondragover = allowDrop;
   document.getElementById("ex3_two").ondragover = allowDrop;
+  document.getElementById("ex3_one").ondrop = drop;
   document.getElementById("ex3_two").ondrop = drop;
 
 })();
