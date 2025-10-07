@@ -45,5 +45,29 @@
     content.textContent = "Numer telefonu jest poprawny";
   }
 
+  //Ex3
+
+  var ex3_element = document.getElementById('ex3_element');
+
+  ex3_element.ondragstart = function(event) {
+    event.dataTransfer.setData("text", event.target.id);
+  };
+
+
+  function allowDrop(event) {
+    event.preventDefault();
+  }
+
+
+  function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    event.target.appendChild(document.getElementById(data));
+  }
+
+
+
+  document.getElementById("ex3_two").ondragover = allowDrop;
+  document.getElementById("ex3_two").ondrop = drop;
 
 })();
